@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+    }
+
+    .card {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ff4d6d;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 0.5rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .yes:hover {
+      background: #e63950;
+      transform: scale(1.05);
+    }
+
+    .no {
+      background: #ddd;
+      color: #555;
+      position: relative;
+    }
+
+    .message {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      color: #ff4d6d;
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Hey Anne Otieno❤️</h1>
+    <p>I don’t always get things right, but one thing I’m sure of is this — I really like you. I like your smile, your energy, and the way you make ordinary days feel better.</p>
+    <p>So I thought I’d ask you in a way that matches how special you are… will you be my Valentine?</p>
+
+    <button class="yes" onclick="sayYes()">Yes 💖</button>
+    <button class="no" onmouseover="moveNo(this)">No 🙈</button>
+
+    <div class="message" id="message">Yay! ❤️ I knew you’d say yes 😌<br><br><strong>Surprise:</strong> Your Valentine date is already planned. All you need to do is show up, look cute (like always), and let me spoil you 💕</div>
+  </div>
+
+  <script>
+    function sayYes() {
+      document.querySelector('.card').innerHTML = `
+        <h1>You said YES 💖</h1>
+        <p>That just made my whole day.</p>
+        <p>I can’t wait to spend Valentine’s Day with you — laughing, eating good food, and making memories.</p>
+        <p><strong>Get ready… your surprise date is coming 😉</strong></p>
+        <p style="margin-top:1.5rem;">❤️ Always yours</p>
+      `;
+    }
+
+    function moveNo(btn) {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
+</body>
+</html>
